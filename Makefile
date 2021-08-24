@@ -14,12 +14,9 @@ clean:
 test:
 	@go test $(TEST_FLAGS) ./...
 
-bin/go-md2man: actual_build_flags := $(BUILD_FLAGS) -o bin/go-md2man
-bin/go-md2man: bin
-	@CGO_ENABLED=0 go build $(actual_build_flags)
-
-bin:
-	@mkdir ./bin
+bin/go-md2man: go.mod go.sum md2man/* *.go
+	@mkdir -p bin
+	CGO_ENABLED=0 go build $(BUILD_FLAGS) -o $@
 
 .PHONY: mod
 mod:

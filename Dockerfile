@@ -1,8 +1,10 @@
-FROM golang:1.8 AS build
+ARG GO_VERSION=1.17
+
+FROM golang:${GO_VERSION} AS build
 COPY . /go/src/github.com/cpuguy83/go-md2man
 WORKDIR /go/src/github.com/cpuguy83/go-md2man
-RUN CGO_ENABLED=0 go build
+RUN make build
 
 FROM scratch
-COPY --from=build /go/src/github.com/cpuguy83/go-md2man/go-md2man /go-md2man
+COPY --from=build /go/src/github.com/cpuguy83/go-md2man/bin/go-md2man /go-md2man
 ENTRYPOINT ["/go-md2man"]
