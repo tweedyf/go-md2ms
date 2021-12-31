@@ -1,6 +1,7 @@
 The MIT License (MIT)
 
-Copyright (c) 2014 Brian Goff, changes copyright (c) 2021 Tweedy Flanigan
+Copyright (c) for substantial portions of go-md2ms are held by Brian Goff 2014 
+as part of go-md2man. All other copyright (c) held by Tweedy Flanigan 2021.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
