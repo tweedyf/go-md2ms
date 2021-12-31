@@ -1,15 +1,8 @@
-go-md2man
+go-md2ms
 =========
 
-Converts markdown into roff (man pages).
-
-Uses blackfriday to process markdown into man pages.
+Converts markdown into roff/ms using [blackfriday](https://github.com/russross/blackfriday). Forked and tweaked from [go-md2man](https://github.com/cpuguy83/go-md2man).
 
 ### Usage
 
-./md2man -in /path/to/markdownfile.md -out /manfile/output/path
-
-### How to contribute
-
-We use go modules to manage dependencies.
-As such you must be using at lest go1.11.
+./go-md2ms [-o output] input

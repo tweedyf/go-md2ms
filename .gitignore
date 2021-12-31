@@ -1,2 +1,4 @@
-go-md2man
-bin
+test.md
+.DS_Store
+go-md2ms
+

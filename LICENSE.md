@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) 2014 Brian Goff
+Copyright (c) 2014 Brian Goff, changes copyright (c) 2021 Tweedy Flanigan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
