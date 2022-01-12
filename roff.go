@@ -48,8 +48,10 @@ const (
 	tableEnd         = ".TE\n"
 	tableCellStart   = "T{\n"
 	tableCellEnd     = "\nT}\n"
-	footnoteTag		 = "\\**\n.FS\n"
-	footnoteCloseTag = ".FE\n"
+	footnoteTag		 = "\\**\n"
+	footnoteCloseTag = ""
+//	footnoteTag		 = "\\**\n.FS\n"
+//	footnoteCloseTag = ".FE\n"
 )
 
 // NewRoffRenderer creates a new blackfriday Renderer for generating roff documents
@@ -113,7 +115,8 @@ func (r *roffRenderer) RenderNode(w io.Writer, node *blackfriday.Node, entering 
 	case blackfriday.Link:
 		if node.NoteID != 0 {
 			if entering {
-				out(w, footnoteTag+string(node.LinkData.Title))
+//				out(w, footnoteTag+string(node.LinkData.Title))
+				out(w, footnoteTag)
 			} else {
 				out(w, footnoteCloseTag)
 			}
@@ -199,7 +202,7 @@ func (r *roffRenderer) handleList(w io.Writer, node *blackfriday.Node, entering 
 	openTag := listTag
 	closeTag := listCloseTag
 	if node.IsFootnotesList {
-		out(w, "W3do2ZqFhg\n")
+//		out(w, "\nEndnotes\n")
 	}
 	if node.ListFlags&blackfriday.ListTypeDefinition != 0 {
 		// tags for definition lists handled within Item node
